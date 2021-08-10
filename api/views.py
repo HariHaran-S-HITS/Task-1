@@ -1,14 +1,12 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from rest_framework import viewsets
-from .models import Model
-from .serializers import ModelSerializer
+from .models import User
+from .serializers import UserSerializer
 
 # create your views here
 
-class ModelView(viewsets.ModelViewSet):
-    """ModelView."""
+class UserView(viewsets.ModelViewSet):
+    """UserView."""
 
-    queryset = Model.objects.all()
-    serializer_class = ModelSerializer
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
