@@ -5,14 +5,34 @@ from rest_framework import generics
 
 # create your views here
 
-class UserView(generics.ListCreateAPIView):
-    """User Create, List View."""
+
+class UserList(generics.ListAPIView):
+    """UserListView."""
 
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-class UserDetail(generics.RetrieveUpdateDestroyAPIView):
-    """User Retrive, Destroy, Update View."""
+class UserCreate(generics.CreateAPIView):
+    """UserCreate."""
+
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDetail(generics.RetrieveAPIView):
+    """UserView."""
+
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDelete(generics.DestroyAPIView):
+    """UserView."""
+
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserUpdate(generics.UpdateAPIView):
+    """UserView."""
 
     queryset = User.objects.all()
     serializer_class = UserSerializer
