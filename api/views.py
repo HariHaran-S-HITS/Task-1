@@ -1,5 +1,5 @@
 from .models import User
-from .serializers import UserSerializer
+from .serializers import UserListRetriveSerializer, BookSerializer, UserCreateSerializer
 from django.http import Http404
 from rest_framework import generics
 
@@ -10,29 +10,29 @@ class UserList(generics.ListAPIView):
     """UserListView."""
 
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = UserListRetriveSerializer
 
 class UserCreate(generics.CreateAPIView):
     """UserCreate."""
 
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = UserCreateSerializer
 
 class UserDetail(generics.RetrieveAPIView):
-    """UserView."""
+    """UserDetatil."""
 
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = UserListRetriveSerializer
 
 class UserDelete(generics.DestroyAPIView):
-    """UserView."""
+    """UserDelete."""
 
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = UserListRetriveSerializer
 
 
 class UserUpdate(generics.UpdateAPIView):
-    """UserView."""
+    """UserUpdate."""
 
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = UserListRetriveSerializer
